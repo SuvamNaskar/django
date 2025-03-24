@@ -7,5 +7,5 @@ from django.http import HttpResponse
 # request handler
 # action
 
-def say_hello():
+def say_hello(request):
     return HttpResponse("Hello World")
