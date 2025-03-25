@@ -8,14 +8,45 @@
 <body>
     <h1>Learning Django to be a python developer</h1>
     <hr>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam deleniti voluptas ullam ab voluptates. Reprehenderit quis consequatur laborum labore animi veritatis quos, quasi sunt voluptatum eligendi nisi suscipit, soluta necessitatibus.</p>
+
+    <table border="1" cellpadding="10" cellspacing="0">
+        <tr>
+            <th>Serial</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Vote</th>
+        </tr>
+
+        {% for people in peoples %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{people.name}}</td>
+            <td>{{people.age}}</td>
+            <td {% if people.age >= 18 %} style="color: green" {% else %} style="color: red" {% endif %}>
+                {% if people.age >= 18 %}
+                YES
+                {% else %}
+                NO
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <p>{{ text | truncatechars:120 }}</p>
+
+    <p>
+        Cucumber:
+        {% if "cucumber" in vegetables %}
+        Available
+        {%else%}
+        Not available
+        {%endif%}
+    </p>
 
     <footer>
         <p>developed by suvamnaskar</p>
     </footer>
 
-    <script>
-        alert("Hello User")
-    </script>
 </body>
 </html>
