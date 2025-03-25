@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
 EXTERNAL_APPS = [
     'home',
+    'repsee',
 ]
 
 INSTALLED_APPS += EXTERNAL_APPS

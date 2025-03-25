@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from home.views import *
+from repsee.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +25,5 @@ urlpatterns = [
     path('success-page/', success_page, name="success"),
     path('about/', about, name="about"),
     path('contact/', contact, name="contact"),
+    path('receipes/', receipes, name="receipes"),
 ]
