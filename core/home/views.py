@@ -24,13 +24,15 @@ def home(req):
     vegetables = ['pumpkin', 'tomato', 'potato', 'cucumber']
 
     # context helps sending data from backend to frontend in django
-    return render(req, 'home/index.html', context={'peoples': peoples, 'text': text, 'vegetables': vegetables})
+    return render(req, 'home/index.html', context={'peoples': peoples, 'text': text, 'vegetables': vegetables, 'page': "Home - Django Learning"})
 
 def success_page(req):
     return HttpResponse("This is a success page")
 
 def contact(req):
-    return render(req, 'home/contact.html')
+    context = {'page': 'Contact'}
+    return render(req, 'home/contact.html', context)
 
 def about(req):
-    return render(req, 'home/about.html')
+    context = {'page': 'About'}
+    return render(req, 'home/about.html', context)
